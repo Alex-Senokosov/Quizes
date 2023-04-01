@@ -19,6 +19,7 @@ from myQuize. views import *
 from rest_framework import routers
 from rest_framework_simplejwt.views import TokenVerifyView,TokenObtainPairView,TokenRefreshView
 from django.views.generic import TemplateView
+app_name = 'myQuize'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -31,6 +32,9 @@ urlpatterns = [
     path('api/v1/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/v1/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('api/v1/token/verify/', TokenVerifyView.as_view(), name='token_verify'),
+    path('', TemplateView.as_view(template_name='DRFsite/templates/index.html')),
+
+
 
 
 
