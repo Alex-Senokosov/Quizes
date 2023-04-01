@@ -32,7 +32,8 @@ urlpatterns = [
     path('api/v1/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/v1/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('api/v1/token/verify/', TokenVerifyView.as_view(), name='token_verify'),
-    path('', TemplateView.as_view(template_name='DRFsite/templates/index.html')),
+    # path('accounts/profile/', RedirectView.as_view(url='http://127.0.0.1:8000')),
+    path('', TemplateView.as_view(template_name='index.html'), name='index'),
 
 
 
