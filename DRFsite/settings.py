@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure--#yj=$0$)9w3@_u*@#q!9hsih)dnr_0x$zj@!d&#dim*i1_c1p
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'myQuize.apps.MyquizeConfig',
     'rest_framework',
     'rest_framework.authtoken',
-    'djoser'
+    'djoser',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -52,6 +53,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'DRFsite.urls'
@@ -184,3 +187,8 @@ SIMPLE_JWT = {
     "SLIDING_TOKEN_OBTAIN_SERIALIZER": "rest_framework_simplejwt.serializers.TokenObtainSlidingSerializer",
     "SLIDING_TOKEN_REFRESH_SERIALIZER": "rest_framework_simplejwt.serializers.TokenRefreshSlidingSerializer",
 }
+CORS_ORIGIN_ALLOW_ALL = True  # Разрешает доступ со всех доменов
+CORS_ALLOW_CREDENTIALS = True  # Разрешает отправку куки и заголовков авторизации
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:63342',  # Добавьте домены, которым нужен доступ
+]
