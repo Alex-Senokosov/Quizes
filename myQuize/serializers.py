@@ -3,7 +3,6 @@ from rest_framework import serializers
 from .models import Myquize
 from rest_framework.renderers import JSONRenderer
 from rest_framework.parsers import JSONParser
-
 class MyquizeSerializer (serializers.ModelSerializer):
     user = serializers.HiddenField(default=serializers.CurrentUserDefault())
     class Meta:
