@@ -10,15 +10,10 @@ from rest_framework.decorators import action
 from rest_framework.permissions import IsAuthenticatedOrReadOnly , IsAdminUser,IsAuthenticated
 from .permissions import IsAdminOrReadOnly,IsOwnerOrReadOnly
 from rest_framework. authentication import TokenAuthentication
-
-
-
 class MyquizeAPIListPagination(PageNumberPagination):
     page_size = 3
     page_size_query_param = 'page_size'
     max_page_size = 10000
-
-
 class MyquizeAPIList (generics .ListCreateAPIView):
     queryset = Myquize.objects.all()
     serializer_class = MyquizeSerializer
