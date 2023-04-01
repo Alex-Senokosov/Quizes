@@ -4,15 +4,26 @@ from .models import Myquize, Category
 from .serializers import MyquizeSerializer
 from rest_framework.views import APIView
 from rest_framework. response import Response
+from rest_framework.pagination import PageNumberPagination
 from django. forms import model_to_dict
 from rest_framework.decorators import action
 from rest_framework.permissions import IsAuthenticatedOrReadOnly , IsAdminUser,IsAuthenticated
 from .permissions import IsAdminOrReadOnly,IsOwnerOrReadOnly
 from rest_framework. authentication import TokenAuthentication
+
+
+
+class MyquizeAPIListPagination(PageNumberPagination):
+    page_size = 3
+    page_size_query_param = 'page_size'
+    max_page_size = 10000
+
+
 class MyquizeAPIList (generics .ListCreateAPIView):
     queryset = Myquize.objects.all()
     serializer_class = MyquizeSerializer
     permission_classes = (IsAuthenticatedOrReadOnly,)
+    pagination_class = MyquizeAPIListPagination
 class MyquizeAPIUpdate (generics. RetrieveUpdateAPIView):
     queryset = Myquize. objects.all()
     serializer_class = MyquizeSerializer
