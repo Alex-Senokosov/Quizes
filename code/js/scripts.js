@@ -1,20 +1,19 @@
-function loadData() {
-  const quizesContainer = document.getElementById('quizes');
+const API_URL = 'http://127.0.0.1:8000/api/v1/Myquize/';
 
-  fetch('/api/v1/Myquize/')
-    .then(response => response.json())
-    .then(data => {
-      // очистим контейнер перед вставкой данных
-      quizesContainer.innerHTML = '';
+axios.get(API_URL)
+  .then(response => {
+    const quizList = document.getElementById('quiz-list');
+    const ul = document.createElement('ul');
 
-      // создадим элементы для каждого квиза и добавим их в контейнер
-      data.forEach(quiz => {
-        const quizDiv = document.createElement('div');
-        quizDiv.innerHTML = `<h2>${quiz.title}</h2><p>${quiz.description}</p>`;
-        quizesContainer.appendChild(quizDiv);
-      });
-    })
-    .catch(error => console.error(error));
-}
+    response.data.results.forEach(quiz => {
+      const li = document.createElement('li');
+      li.innerHTML = `<strong>${quiz.title}</strong>: ${quiz.content}`;
+      ul.appendChild(li);
+    });
 
-window.addEventListener('load', loadData);
+    quizList.innerHTML = '';
+    quizList.appendChild(ul);
+  })
+  .catch(error => {
+    console.log(error);
+  });
