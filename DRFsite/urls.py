@@ -15,10 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include, re_path
-from myQuize. views import *
+from myQuize.views import *
 from rest_framework import routers
 from rest_framework_simplejwt.views import TokenVerifyView,TokenObtainPairView,TokenRefreshView
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView,RedirectView
+
 app_name = 'myQuize'
 
 urlpatterns = [
@@ -34,7 +35,8 @@ urlpatterns = [
     path('api/v1/token/verify/', TokenVerifyView.as_view(), name='token_verify'),
     # path('accounts/profile/', RedirectView.as_view(url='http://127.0.0.1:8000')),
     path('', TemplateView.as_view(template_name='index.html'), name='index'),
-
+    path('accounts/profile/', RedirectView.as_view(url='/')),
+    path('users/', UserCreate.as_view(), name='user-create'),
 #
 #
 #

@@ -4,14 +4,19 @@ from .models import Myquize
 from rest_framework.renderers import JSONRenderer
 from rest_framework.parsers import JSONParser
 from django.shortcuts import render
-
+from django.contrib.auth.models import User
 class MyquizeSerializer (serializers.ModelSerializer):
     user = serializers.HiddenField(default=serializers.CurrentUserDefault())
     class Meta:
         model = Myquize
         fields = ("__all__")
 
+class UserSerializer(serializers.ModelSerializer):
+    password = serializers.CharField(write_only=True)
 
+    class Meta:
+        model = User
+        fields = ['id', 'username', 'email', 'password']
 
 
 

@@ -1,35 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="HandheldFriendly" content="true">
-    <meta name = "format-detection" content = "telephone=no">
-    <title>Quiz Project</title>
-    <link rel="stylesheet" type="text/css"  href="css/styles.css" />
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <H1>Конструктор квизов</H1>
+<link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
-<body>
-<div class="quiz-box" id="quiz">
-    <div class="quiz-header">
-        <h2 id="question">Question text</h2>
-        <ul>
-            <li>
-                <input type="radio" name="answer" id="a" class="answer">
-                <label for="a" id="a_text">Question</label>
-            </li>
-            <li>
-                <input type="radio" name="answer" id="b" class="answer">
-                <label for="b" id="b_text">Question</label>
-            </li>
-            <li>
-                <input type="radio" name="answer" id="c" class="answer">
-                <label for="c" id="c_text">Question</label>
-            </li>
-        </ul>
-    </div>
-    <button id="submit">Submit</button>
-</div>
- <script src="js/scripts.js"></script>
-</body>
+  <body>
+   <div class="login-button-container">
+       <a class="register-link" href="http://127.0.0.1:8000/users/">Register</a>
+    <a class="login-link" href="http://127.0.0.1:8000/api/v1/Myquize-auth/login/">Login</a>
+   </div>
+    <table id="quiz-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Title</th>
+          <th>question</th>
+          <th>answer_1</th>
+          <th>answer_2</th>
+          <th>answer_3</th>
+          <th>answer_correct</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <script src="js/scripts.js"></script>
+  </body>
 </html>

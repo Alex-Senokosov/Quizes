@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User,AbstractUser
 class Myquize (models.Model):
     title = models.CharField(max_length=255)  # Название квиза (тема - дублирование по каждому вопросу)
     question = models.TextField(blank=True)  # Вопрос

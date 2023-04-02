@@ -1,61 +1,48 @@
-*{
-    box-sizing: border-box;
+body {
+  background-color: #217569;
 }
-body{
-    font-family: 'Roboto', sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    overflow: hidden;
-    margin: 0;
-    background: url('../images/bg.jpg') no-repeat;
-    background-position: center;
-    background-size: cover;
+
+table {
+  margin: 0 auto;
+  width: 100%;
+  border-collapse: collapse;
 }
-h2{
-    padding: 16px;
-    text-align: center;
-    margin: 0;
+
+th, td {
+  padding: 8px;
+  text-align: justify;
+  border-bottom: 1px solid #dcd;
 }
-.quiz-box{
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px 2px rgba(100, 100, 100, 0.1);
-    width: 600px;
-    overflow: hidden;
+
+th {
+  background-color: #3b26a6;
+  color: white;
 }
-.quiz-header{
-    padding: 64px;
+
+.register-link,
+.login-link {
+  position: absolute;
+  top: 10px;
+  margin: 5px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  text-transform: uppercase;
 }
-ul{
-    list-style: none;
-    padding: 0;
+
+.register-link {
+  right: 100px;
+  background-color: #4CAF50;
+  color: white;
 }
-ul li{
-    font-size: 20px;
-    margin: 15px 0;
+
+.login-link {
+  right: 10px;
+  background-color: #008CBA;
+  color: white;
 }
-ul li label{
-    cursor: pointer;
-}
-button{
-    background-color: #5ec6eb;
-    border: none;
-    display: block;
-    width: 100%;
-    cursor: pointer;
-    font-size: 20px;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: #000000;
-    padding: 15px;
-    transition: all 0.5s ease;
-}
-button:hover{
-    background-color: #438faa;
-}
-button:focus{
-    outline: none;
-    background-color: #5ec6eb;
+
+body {
+  background-color: #217569;
 }
