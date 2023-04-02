@@ -1,3 +1,9 @@
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  border-radius: 5px;
+}
+
 .register-btn {
   background-color: #007bff;
   color: #fff;
