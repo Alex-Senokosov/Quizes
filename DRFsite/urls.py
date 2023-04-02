@@ -35,17 +35,18 @@ urlpatterns = [
     # path('accounts/profile/', RedirectView.as_view(url='http://127.0.0.1:8000')),
     path('', TemplateView.as_view(template_name='index.html'), name='index'),
 
-
-
-
-
+#
+#
+#
+#
+#
 # class MyCustomRouter (routers. SimpleRouter):
 #     routes = [
 #         routers.Route(url=r'^{prefix}$',
 #                      mapping={'get': 'list'},
 #                      name='{basename}-list',
 #                      detail=False,
-#                      initkwargs={'suffix': 'List'}),
+# #                      initkwargs={'suffix': 'List'}),
 #         routers.Route(url=r'^{prefix}/{lookup}$',
 #                      mapping={'get': 'retrieve'},
 #                      name='{basename}-detail',
